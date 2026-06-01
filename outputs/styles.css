@@ -25,6 +25,9 @@ body {
 
 a {
   color: var(--link);
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -83,6 +86,9 @@ img {
 .nav a,
 .subscribe {
   color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
   text-decoration: none;
 }
 
@@ -179,13 +185,35 @@ h3 {
   margin: 28px 0 38px;
 }
 
-.tags span {
+.tags a {
   border: 1px solid #c8d8e0;
   border-radius: 999px;
   padding: 6px 14px;
   color: #6d8490;
   background: #fbfdfe;
   font-size: 13px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.tags a:hover,
+.tags a:focus-visible,
+.nav a:hover,
+.nav a:focus-visible,
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--accent-dark);
+}
+
+.tags a:focus-visible,
+.nav a:focus-visible,
+.subscribe:focus-visible,
+.cta:focus-visible,
+.breadcrumbs a:focus-visible,
+.content a:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid rgba(28, 127, 148, 0.28);
+  outline-offset: 3px;
 }
 
 .hero-image {
